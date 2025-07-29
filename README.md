@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -32,13 +32,13 @@
         <header class="text-center mb-12 bg-white rounded-lg shadow-lg p-6">
             <h1 class="text-4xl md:text-5xl font-extrabold text-blue-700 mb-4">Análisis de Calidad: Ticketera 2.0.4</h1>
             <p class="text-xl md:text-2xl text-gray-600">Informe de Avance de Pruebas QA</p>
-            <p class="text-md text-gray-500 mt-2">Fecha: 29 de Julio de 2025 | Generado por: Leandro Diaz</p>
+            <p class="text-md text-gray-500 mt-2">Fecha: 15 de Julio de 2025 | Generado por: Leandro Diaz</p>
         </header>
 
         <section id="resumen-ejecutivo" class="bg-white rounded-lg shadow-lg p-6 mb-12">
             <h2 class="text-3xl font-bold text-blue-600 mb-6">1. Resumen Ejecutivo</h2>
             <p class="text-lg leading-relaxed mb-4">
-                Este informe presenta el avance de las pruebas QA para la Ticketera 2.0.4. El objetivo fue verificar correcciones de defectos, detectar regresiones y proponer mejoras de UX. Se ejecutaron **24 casos de prueba (CP001-CP024)** y se registraron **4 sugerencias (SUG001-SUG004)**, con foco en los módulos de Configuración (Empresas, Áreas, Proyectos, Grupos), Flujos, Formularios, Creación de Tickets, Notificaciones y Exportación.
+                Este informe presenta el avance de las pruebas QA para la Ticketera 2.0.4. El objetivo fue verificar correcciones de defectos, detectar regresiones y proponer mejoras de UX. Se ejecutaron 27 casos de prueba (CP001-CP027) y se registraron 4 sugerencias (SUG001-SUG004), con foco en los módulos de Configuración (Empresas, Áreas, Proyectos, Grupos), Flujos, Formularios, Creación de Tickets, Notificaciones y Exportación.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
@@ -46,7 +46,7 @@
                     <ul class="list-disc list-inside text-lg space-y-2">
                         <li><strong class="text-green-600">Defectos Corregidos:</strong> Creación y edición de Empresas y Áreas ahora OK. Indicador de conectividad OK. Filtros en Bandejas OK. Flujo de asignación de tickets OK.</li>
                         <li><strong class="text-yellow-600">En Desarrollo:</strong> Eliminación en varios módulos y módulo de Usuarios en desarrollo.</li>
-                        <li><strong class="text-red-600">Defectos Persistentes/Nuevos:</strong> 13 defectos críticos/importantes impactan usabilidad y funcionalidad.</li>
+                        <li><strong class="text-red-600">Defectos Persistentes/Nuevos:</strong> 15 defectos críticos/importantes impactan usabilidad y funcionalidad.</li>
                         <li><strong class="text-blue-400">Sugerencias de Mejora:</strong> 4 propuestas para optimizar estética y claridad.</li>
                     </ul>
                 </div>
@@ -88,13 +88,19 @@
                 <div>
                     <h3 class="text-2xl font-semibold text-red-500 mb-4">Defectos Críticos Destacados</h3>
                     <ul class="list-disc list-inside text-lg space-y-2">
+                        <li><strong class="text-red-600">CP025 (Tickets):</strong> Historial de Auditoría no funciona (criticidad: 9)</li>
+                        <li><strong class="text-red-600">CP027 (Notificaciones):</strong> Cambios de Prioridad/Mensajes en Chat sin notificación (criticidad: 7)</li>
+                        <li><strong class="text-red-600">CP026 (Notificaciones):</strong> Emails por Movimientos de Ticket no llegan (criticidad: 7)</li>
                         <li><strong class="text-red-600">CP019 (Formularios):</strong> Persistencia de datos (criticidad: 7)</li>
-                        <li><strong class="text-red-600">CP014 (Formularios):</strong> Error al guardar modificaciones (criticidad: 6)</li>
-                        <li><strong class="text-red-600">CP011 (Flujos):</strong> Edición abre ventana incorrecta (criticidad: 3)</li>
-                        <li><strong class="text-red-600">CP012 (Flujos):</strong> Falta la opción de eliminar (criticidad: 3)</li>
-                        <li><strong class="text-red-600">CP017 (Exportación):</strong> Botones de exportación PDF/Excel no funcionan (criticidad: 3)</li>
+                        <li><strong class="text-red-600">CP011 (Proyectos):</strong> Cliente no visible en bandeja (criticidad: 7)</li>
+                        <li><strong class="text-red-600">CP014 (Formularios):</strong> Eliminar formulario (criticidad: 6)</li>
+                        <li><strong class="text-red-600">CP022 (Bandejas):</strong> Buscador con texto invisible (criticidad: 5)</li>
+                        <li><strong class="text-red-600">CP018 (Notificaciones):</strong> Consistencia de Color de Criticidad (criticidad: 4)</li>
+                        <li><strong class="text-red-600">CP010 (Flujos):</strong> Editar flujo - Datos Vacíos / Ventana Incorrecta (criticidad: 3)</li>
+                        <li><strong class="text-red-600">CP012 (Flujos):</strong> Eliminar flujo (criticidad: 3)</li>
+                        <li><strong class="text-red-600">CP017 (Exportación de datos):</strong> Funcionalidad de Exportación PDF/Excel (criticidad: 3)</li>
+                        <li><strong class="text-red-600">CP009 (Flujos):</strong> Desactivar flujo (criticidad: 3)</li>
                         <li><strong class="text-red-600">CP001 (Empresas):</strong> Problema de acentuación en dominio (criticidad: 2)</li>
-                        <li><strong class="text-red-600">CP022 (Bandejas):</strong> Buscador con texto invisible.</li>
                     </ul>
                 </div>
             </div>
@@ -113,8 +119,8 @@
                         <li><strong class="text-green-600">CP003 (Áreas):</strong> Creación de áreas operativa.</li>
                         <li><strong class="text-green-600">CP004 (Áreas):</strong> Edición de áreas operativa.</li>
                         <li><strong class="text-green-600">CP015 (Nuevo Ticket):</strong> Creación de tickets con combinaciones Tipo/Subárea.</li>
-                        <li><strong class="text-green-600">CP020 (Configuración > Áreas):</strong> Creación de área en otra empresa (por diseño).</li>
-                        <li><strong class="text-green-600">CP021 (General):</strong> Indicador de Conectividad (barrita blanca) funciona correctamente.</li>
+                        <li><strong class="text-green-600">CP20 (Configuración > Áreas):</strong> Creación de área en otra empresa (por diseño).</li>
+                        <li><strong class="text-green-600">CP21 (General):</strong> Indicador de Conectividad (barrita blanca) funciona correctamente.</li>
                         <li><strong class="text-green-600">CP023 (Bandejas):</strong> Funcionalidad de filtros en bandejas Personal y Equipo.</li>
                         <li><strong class="text-green-600">CP024 (Tickets):</strong> Flujo de asignación a bandeja de equipo y personal, y notificación interna (campanita).</li>
                     </ul>
@@ -201,31 +207,31 @@
             { id: 'CP006', module: 'Configuración > Proyectos', action: 'Eliminar proyecto', status: 'No Aplicable (Pendiente de Desarrollo)', details: 'Función no implementada.' },
             { id: 'CP007', module: 'Configuración > Grupos', action: 'Eliminar grupo', status: 'No Aplicable (Pendiente de Desarrollo)', details: 'No hay opción para eliminar.' },
             { id: 'CP008', module: 'Usuarios', action: 'Creación y visualización de usuarios', status: 'No Aplicable (En Desarrollo)', details: 'Módulo aún en desarrollo, impide gestión.' },
-            { id: 'CP009', module: 'Flujos', action: 'Desactivar flujo', status: 'Fallido', details: 'Interruptor no responde, estado no cambia.' },
+            { id: 'CP009', module: 'Flujos', action: 'Desactivar flujo', status: 'Fallido', details: 'Interruptor no responde, estado no cambia.', criticality: 3 },
             { id: 'CP010', module: 'Flujos', action: 'Editar flujo - Datos Vacíos / Ventana Incorrecta', status: 'Fallido', details: 'Abre ventana de "Nuevo Flujo" en blanco, no edición.', criticality: 3 },
-            { id: 'CP011', module: 'Configuración > Proyectos', action: 'Editar proyecto - Cliente no visible en bandeja', status: 'Fallido', details: 'Cambios de cliente no se reflejan en la lista principal, especialmente con múltiples clientes.' },
+            { id: 'CP11', module: 'Configuración > Proyectos', action: 'Editar proyecto - Cliente no visible en bandeja', status: 'Fallido', details: 'Cambios de cliente no se reflejan en la lista principal, especialmente con múltiples clientes.', criticality: 7 },
             { id: 'CP12', module: 'Flujos', action: 'Eliminar flujo', status: 'Fallido', details: 'No hay opción para eliminar.', criticality: 3 },
-            { id: 'CP13', module: 'Formularios', action: 'Editar formulario - Error al Guardar', status: 'Fallido', details: 'Mensaje "Error al crear formulario", cambios no se aplican.' },
+            { id: 'CP13', module: 'Formularios', action: 'Editar formulario - Error al Guardar', status: 'Fallido', details: 'Mensaje "Error al crear formulario", cambios no se aplican.', criticality: 8 },
             { id: 'CP14', module: 'Formularios', action: 'Eliminar formulario', status: 'Fallido', details: 'No hay opción para eliminar.', criticality: 6 },
             { id: 'CP15', module: 'Nuevo Ticket', action: 'Creación Ticket sin Formulario - Combinaciones Tipo/Subárea', status: 'OK', details: 'Todas las combinaciones creadas correctamente.' },
-            { id: 'CP16', module: 'Creación de Ticket / Bandejas / Notificaciones', action: 'Consistencia de Actualización UI', status: 'Fallido', details: 'Bandeja no se actualiza automáticamente al crear ticket (requiere refresh).' },
+            { id: 'CP16', module: 'Creación de Ticket / Bandejas / Notificaciones', action: 'Consistencia de Actualización UI', status: 'Fallido', details: 'Bandeja no se actualiza automáticamente al crear ticket (requiere refresh).', criticality: 8 },
             { id: 'CP17', module: 'Exportación de datos', action: 'Funcionalidad de Exportación PDF/Excel', status: 'Fallido', details: 'Botones de exportación no funcionan en ningún módulo.', criticality: 3 },
-            { id: 'CP18', module: 'Notificaciones por Email', action: 'Consistencia de Color de Criticidad', status: 'Fallido', details: 'Color de criticidad en email siempre amarillo.' },
+            { id: 'CP18', module: 'Notificaciones por Email', action: 'Consistencia de Color de Criticidad', status: 'Fallido', details: 'Color de criticidad en email siempre amarillo.', criticality: 4 },
             { id: 'CP19', module: 'Formularios', action: 'Persistencia de Datos en Creación de Formulario', status: 'Fallido', details: '"Usuarios a notificar" y checkboxes de campos no persisten al guardar/abrir.', criticality: 7 },
             { id: 'CP20', module: 'Configuración > Áreas', action: 'Crear Área en otra empresa (por Diseño)', status: 'OK (por Diseño)', details: 'El sistema se comporta como se esperaba, impidiendo la acción. Confirmado como diseño intencional.' },
             { id: 'CP21', module: 'General', action: 'Indicador de Conectividad (barrita blanca)', status: 'OK', details: 'La "barrita blanca" aparece en todas las vistas, muestra "Conectado", cambia a "Desconectado" (punto rojo) y "Reconectando" (punto amarillo) según el estado de la red.' },
-            { id: 'CP22', module: 'Bandejas', action: 'Buscador Invisible', status: 'Fallido', details: 'Al escribir en el buscador de las bandejas, el color del texto ingresado es blanco, lo que no contrasta con el fondo, impidiendo que se vea lo que se escribe.'},
+            { id: 'CP22', module: 'Bandejas', action: 'Buscador Invisible', status: 'Fallido', details: 'Al escribir en el buscador de las bandejas, el color del texto ingresado es blanco, lo que no contrasta con el fondo, impidiendo que se vea lo que se escribe.', criticality: 5},
             { id: 'CP23', module: 'Bandejas', action: 'Funcionalidad de Filtros', status: 'OK', details: 'Funcionalidad de filtrado estable en las bandejas Personal y Equipo.'},
             { id: 'CP24', module: 'Tickets', action: 'Flujo de Asignación y Notificación Interna (Campanita)', status: 'OK', details: 'Un ticket creado por un compañero se asigna a mi área, llega a mi bandeja de equipo, lo asigno a mí mismo y llega a mi bandeja personal. La notificación interna (campanita) también aparece correctamente.'},
-            { id: 'CP25', module: 'Tickets', action: 'Historial de Auditoría', status: 'Fallido', details: 'El botón de "Historial de Auditoría" no muestra los movimientos anteriores del ticket.'},
-            { id: 'CP26', module: 'Notificaciones por Email', action: 'Notificaciones por Movimientos de Ticket (Entrega)', status: 'Fallido', details: 'Los correos de notificaciones de movimientos de tickets (ej. asignaciones) no están llegando a la casilla de correo.'},
-            { id: 'CP27', module: 'Notificaciones (Interna y Email)', action: 'Cambios de Prioridad/Mensajes en Chat', status: 'Fallido', details: 'Al cambiar la prioridad o agregar un mensaje en el chat del ticket, no llega notificación de ningún tipo (ni email ni interna). La acción de cambio de prioridad sí se graba en la auditoría.'}
+            { id: 'CP25', module: 'Tickets', action: 'Historial de Auditoría', status: 'Fallido', details: 'El botón de "Historial de Auditoría" no muestra los movimientos anteriores del ticket.', criticality: 9 },
+            { id: 'CP26', module: 'Notificaciones por Email', action: 'Notificaciones por Movimientos de Ticket (Entrega)', status: 'Fallido', details: 'Los correos de notificaciones de movimientos de tickets (ej. asignaciones) no están llegando a la casilla de correo.', criticality: 7 },
+            { id: 'CP27', module: 'Notificaciones (Interna y Email)', action: 'Cambios de Prioridad/Mensajes en Chat', status: 'Fallido', details: 'Al cambiar la prioridad o agregar un mensaje en el chat del ticket, no llega notificación de ningún tipo (ni email ni interna). La acción de cambio de prioridad sí se graba en la auditoría.', criticality: 7 }
         ];
 
         // Sort fallidos by criticality for the chart (higher criticality first)
         const fallidos = testCasesData.filter(tc => tc.status === 'Fallido').sort((a, b) => (b.criticality || 0) - (a.criticality || 0));
         const fallidosLabels = fallidos.map(tc => wrapLabel(`${tc.id} (${tc.module.split('>').pop().trim()})`));
-
+        const fallidosCriticalities = fallidos.map(tc => tc.criticality || 1); // Use criticality, default to 1 if not set
 
         const resumenEstadoCtx = document.getElementById('resumenEstadoChart').getContext('2d');
         new Chart(resumenEstadoCtx, {
@@ -233,7 +239,7 @@
             data: {
                 labels: ['OK', 'Fallido', 'En Desarrollo', 'Sugerencias'],
                 datasets: [{
-                    data: [8, 15, 5, 4], // OK: 5 (from PDF) + 3 new OKs (CP021, CP023, CP024) = 8. Fallido: 10 (from PDF) + 3 new Fallidos (CP025, CP026, CP027) = 13 + CP001,CP010,CP011,CP013,CP017,CP018,CP019,CP022 = 15. En Desarrollo: 5. Sugerencias: 4
+                    data: [8, fallidos.length, 4, 4], 
                     backgroundColor: ['#2ECC71', '#E74C3C', '#F39C12', '#3498DB'],
                     hoverOffset: 4
                 }]
@@ -264,8 +270,8 @@
             data: {
                 labels: fallidosLabels,
                 datasets: [{
-                    label: 'Casos Fallidos',
-                    data: fallidos.map(() => 1), 
+                    label: 'Criticidad',
+                    data: fallidosCriticalities, 
                     backgroundColor: '#E74C3C',
                     borderColor: '#C0392B',
                     borderWidth: 1
@@ -280,7 +286,10 @@
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Cantidad de Fallos'
+                            text: 'Nivel de Criticidad'
+                        },
+                        ticks: {
+                            stepSize: 1 
                         }
                     },
                     x: {
@@ -296,7 +305,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Casos Fallidos por Módulo/Funcionalidad (Crítico a Menos Crítico)',
+                        text: 'Defectos Fallidos por Módulo/Funcionalidad (Ordenado por Criticidad)',
                         font: {
                             size: 16
                         }
