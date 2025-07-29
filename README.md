@@ -32,7 +32,7 @@
         <header class="text-center mb-12 bg-white rounded-lg shadow-lg p-6">
             <h1 class="text-4xl md:text-5xl font-extrabold text-blue-700 mb-4">Análisis de Calidad: Ticketera 2.0.4</h1>
             <p class="text-xl md:text-2xl text-gray-600">Informe de Avance de Pruebas QA</p>
-            <p class="text-md text-gray-500 mt-2">Fecha: 15 de Julio de 2025 | Generado por: Leandro Diaz</p>
+            <p class="text-md text-gray-500 mt-2">Fecha: 29 de Julio de 2025 | Generado por: Leandro Diaz</p>
         </header>
 
         <section id="resumen-ejecutivo" class="bg-white rounded-lg shadow-lg p-6 mb-12">
@@ -89,6 +89,8 @@
                     <h3 class="text-2xl font-semibold text-red-500 mb-4">Defectos Críticos Destacados</h3>
                     <ul class="list-disc list-inside text-lg space-y-2">
                         <li><strong class="text-red-600">CP025 (Tickets):</strong> Historial de Auditoría no funciona (criticidad: 9)</li>
+                        <li><strong class="text-red-600">CP013 (Formularios):</strong> Editar formulario - Error al Guardar (criticidad: 8)</li>
+                        <li><strong class="text-red-600">CP016 (Actualización UI):</strong> Consistencia de Actualización UI (criticidad: 8)</li>
                         <li><strong class="text-red-600">CP027 (Notificaciones):</strong> Cambios de Prioridad/Mensajes en Chat sin notificación (criticidad: 7)</li>
                         <li><strong class="text-red-600">CP026 (Notificaciones):</strong> Emails por Movimientos de Ticket no llegan (criticidad: 7)</li>
                         <li><strong class="text-red-600">CP019 (Formularios):</strong> Persistencia de datos (criticidad: 7)</li>
@@ -96,10 +98,10 @@
                         <li><strong class="text-red-600">CP014 (Formularios):</strong> Eliminar formulario (criticidad: 6)</li>
                         <li><strong class="text-red-600">CP022 (Bandejas):</strong> Buscador con texto invisible (criticidad: 5)</li>
                         <li><strong class="text-red-600">CP018 (Notificaciones):</strong> Consistencia de Color de Criticidad (criticidad: 4)</li>
+                        <li><strong class="text-red-600">CP009 (Flujos):</strong> Desactivar flujo (criticidad: 3)</li>
                         <li><strong class="text-red-600">CP010 (Flujos):</strong> Editar flujo - Datos Vacíos / Ventana Incorrecta (criticidad: 3)</li>
                         <li><strong class="text-red-600">CP012 (Flujos):</strong> Eliminar flujo (criticidad: 3)</li>
                         <li><strong class="text-red-600">CP017 (Exportación de datos):</strong> Funcionalidad de Exportación PDF/Excel (criticidad: 3)</li>
-                        <li><strong class="text-red-600">CP009 (Flujos):</strong> Desactivar flujo (criticidad: 3)</li>
                         <li><strong class="text-red-600">CP001 (Empresas):</strong> Problema de acentuación en dominio (criticidad: 2)</li>
                     </ul>
                 </div>
@@ -218,7 +220,7 @@
             { id: 'CP17', module: 'Exportación de datos', action: 'Funcionalidad de Exportación PDF/Excel', status: 'Fallido', details: 'Botones de exportación no funcionan en ningún módulo.', criticality: 3 },
             { id: 'CP18', module: 'Notificaciones por Email', action: 'Consistencia de Color de Criticidad', status: 'Fallido', details: 'Color de criticidad en email siempre amarillo.', criticality: 4 },
             { id: 'CP19', module: 'Formularios', action: 'Persistencia de Datos en Creación de Formulario', status: 'Fallido', details: '"Usuarios a notificar" y checkboxes de campos no persisten al guardar/abrir.', criticality: 7 },
-            { id: 'CP20', module: 'Configuración > Áreas', action: 'Crear Área en otra empresa (por Diseño)', status: 'OK (por Diseño)', details: 'El sistema se comporta como se esperaba, impidiendo la acción. Confirmado como diseño intencional.' },
+            { id: 'CP20', module: 'Configuración > Áreas', action: 'Crear Área en otra empresa (por Diseño)', status: 'OK (por Diseño)', details: 'El sistema se comporta como se esperaba, impidiendo la acción. Confirmo como diseño intencional.' },
             { id: 'CP21', module: 'General', action: 'Indicador de Conectividad (barrita blanca)', status: 'OK', details: 'La "barrita blanca" aparece en todas las vistas, muestra "Conectado", cambia a "Desconectado" (punto rojo) y "Reconectando" (punto amarillo) según el estado de la red.' },
             { id: 'CP22', module: 'Bandejas', action: 'Buscador Invisible', status: 'Fallido', details: 'Al escribir en el buscador de las bandejas, el color del texto ingresado es blanco, lo que no contrasta con el fondo, impidiendo que se vea lo que se escribe.', criticality: 5},
             { id: 'CP23', module: 'Bandejas', action: 'Funcionalidad de Filtros', status: 'OK', details: 'Funcionalidad de filtrado estable en las bandejas Personal y Equipo.'},
@@ -228,7 +230,7 @@
             { id: 'CP27', module: 'Notificaciones (Interna y Email)', action: 'Cambios de Prioridad/Mensajes en Chat', status: 'Fallido', details: 'Al cambiar la prioridad o agregar un mensaje en el chat del ticket, no llega notificación de ningún tipo (ni email ni interna). La acción de cambio de prioridad sí se graba en la auditoría.', criticality: 7 }
         ];
 
-        // Sort fallidos by criticality for the chart (higher criticality first)
+        // Filter and sort fallidos by criticality for the chart (higher criticality first)
         const fallidos = testCasesData.filter(tc => tc.status === 'Fallido').sort((a, b) => (b.criticality || 0) - (a.criticality || 0));
         const fallidosLabels = fallidos.map(tc => wrapLabel(`${tc.id} (${tc.module.split('>').pop().trim()})`));
         const fallidosCriticalities = fallidos.map(tc => tc.criticality || 1); // Use criticality, default to 1 if not set
@@ -247,7 +249,6 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                ...tooltipConfig,
                 plugins: {
                     legend: {
                         position: 'top',
@@ -259,7 +260,19 @@
                             size: 16
                         }
                     },
-                    ...tooltipConfig.plugins
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         });
@@ -280,7 +293,31 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                ...tooltipConfig,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Defectos Fallidos por Módulo/Funcionalidad (Ordenado por Criticidad)',
+                        font: {
+                            size: 16
+                        }
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true,
@@ -298,19 +335,6 @@
                             text: 'Módulo / Funcionalidad (Ordenado por Criticidad)'
                         }
                     }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    title: {
-                        display: true,
-                        text: 'Defectos Fallidos por Módulo/Funcionalidad (Ordenado por Criticidad)',
-                        font: {
-                            size: 16
-                        }
-                    },
-                    ...tooltipConfig.plugins
                 }
             }
         });
@@ -340,7 +364,31 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                ...tooltipConfig,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Funcionalidades OK',
+                        font: {
+                            size: 16
+                        }
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true,
@@ -355,19 +403,6 @@
                             text: 'Módulo / Funcionalidad'
                         }
                     }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    title: {
-                        display: true,
-                        text: 'Funcionalidades OK',
-                        font: {
-                            size: 16
-                        }
-                    },
-                    ...tooltipConfig.plugins
                 }
             }
         });
