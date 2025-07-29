@@ -32,7 +32,7 @@
         <header class="text-center mb-12 bg-white rounded-lg shadow-lg p-6">
             <h1 class="text-4xl md:text-5xl font-extrabold text-blue-700 mb-4">Análisis de Calidad: Ticketera 2.0.4</h1>
             <p class="text-xl md:text-2xl text-gray-600">Informe de Avance de Pruebas QA</p>
-            <p class="text-md text-gray-500 mt-2">Fecha: 15 de Julio de 2025 | Generado por: Leandro Diaz</p>
+            <p class="text-md text-gray-500 mt-2">Fecha: 29 de Julio de 2025 | Generado por: Leandro Diaz</p>
         </header>
 
         <section id="resumen-ejecutivo" class="bg-white rounded-lg shadow-lg p-6 mb-12">
