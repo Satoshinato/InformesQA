@@ -113,10 +113,10 @@
             <p class="text-lg leading-relaxed mb-4">
                 A pesar de los defectos, la versión 2.0.4 ha logrado avances importantes en la estabilidad de operaciones básicas y algunas funcionalidades se comportan según lo diseñado o están en desarrollo.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <h3 class="text-2xl font-semibold text-green-500 mb-4">Funcionalidades OK</h3>
-                    <ul class="list-disc list-inside text-lg space-y-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div class="bg-green-50 border-l-4 border-green-500 rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-semibold text-green-700 mb-4">Funcionalidades OK</h3>
+                    <ul class="list-disc list-inside text-lg space-y-2 text-gray-800">
                         <li><strong class="text-green-600">CP002 (Empresas):</strong> Edición de empresas operativa.</li>
                         <li><strong class="text-green-600">CP003 (Áreas):</strong> Creación de áreas operativa.</li>
                         <li><strong class="text-green-600">CP004 (Áreas):</strong> Edición de áreas operativa.</li>
@@ -127,16 +127,13 @@
                         <li><strong class="text-green-600">CP024 (Tickets):</strong> Flujo de asignación a bandeja de equipo y personal, y notificación interna (campanita).</li>
                     </ul>
                 </div>
-                <div class="chart-container">
-                    <canvas id="okVsNaChart"></canvas>
+                <div class="bg-yellow-50 border-l-4 border-yellow-500 rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-semibold text-yellow-700 mb-4">En Desarrollo</h3>
+                    <ul class="list-disc list-inside text-lg space-y-2 text-gray-800">
+                        <li><strong class="text-gray-700">Eliminación de Elementos:</strong> Áreas (CP005), Proyectos (CP006), Grupos (CP007), Flujos (CP012), Formularios (CP014) - Funcionalidad no implementada, planeada para futuras versiones.</li>
+                        <li><strong class="text-gray-700">Módulo de Usuarios (CP008):</strong> Aún en desarrollo, impide pruebas completas de gestión.</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="mt-8">
-                <h3 class="text-2xl font-semibold text-yellow-600 mb-4">En Desarrollo</h3>
-                <ul class="list-disc list-inside text-lg space-y-2">
-                    <li><strong class="text-gray-700">Eliminación de Elementos:</strong> Áreas (CP005), Proyectos (CP006), Grupos (CP007), Flujos (CP012), Formularios (CP014) - Funcionalidad no implementada, planeada para futuras versiones.</li>
-                    <li><strong class="text-gray-700">Módulo de Usuarios (CP008):</strong> Aún en desarrollo, impide pruebas completas de gestión.</li>
-                </ul>
             </div>
         </section>
 
